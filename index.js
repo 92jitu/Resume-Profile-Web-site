@@ -12,27 +12,27 @@ app.use(bodyParser.urlencoded({
 }))
 
 
-mongoose.connect('mongodb://Localhost:27017/mydb',
+mongoose.connect('mongodb://Localhost:27017',
 {
     useNewUrlParser:true,
     useUnifiedTopoLogy:true
-});
+})
 
 var db =mongoose.connection;
 db.on('error',()=>console.log("Error in Connection to mongo"));
 db.once('open',()=>console.log('Connected to Database'));
 
 
-app.post("/sign_up",(req,res)=>{
+app.post("/signup_success",(req,res)=>{
     var name=req.body.name;
     var email=req.body.email;
-    var phno=req.body.phno;
+    var phon=req.body.phon;
     var massage=req.body.massage;
 
     var data={
         "name":name,
         "email":email,
-        "phon":phno,
+        "phon":phon,
         "massage":massage
     }
         db.collection('users').insertOne(data,(err,collection)=>{
@@ -42,7 +42,7 @@ app.post("/sign_up",(req,res)=>{
             console.log("Record Inserted Successfully");
         });
 
-        return res.redirect('signup_success.html')
+        return res.redirect('signup_succes.html')
 })
 
 
@@ -52,6 +52,6 @@ app.get("/", (req, res) => {
         "Allow-access-Allow-origin": '*'
     })
     return res.redirect('index.html')
-}).listen(3001);
+}).listen(5005);
 
-console.log("Listning on port 3001")
+console.log("Listning on port 5005")

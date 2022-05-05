@@ -52,37 +52,62 @@
 cursor: pointer;
 }
 
+/* timeline */
 
-
-/* .about-section{
-     padding-top: 120px;
-    border:  5px solid; 
+.timeline {
+    border-left: 2px solid #E6E9ED;
+    padding: 1rem 0; }
+  
+  .timeline-card {
+    position: relative;
+    margin-left: 31px;
     border-left: 2px solid;
-    border-right: 2px solid;
-}
-
-.skills-section
-{
-    border-left: 2px solid;
-    border-right: 2px solid;
-} */
-
-
-@media (min-width: 1200px)
-{
-
-}
-
-@media (min-width: 992px)
-{
-
-}
-
-@media (min-width: 768px)
-{
-
-}
-@media (min-width: 576px) {
-
-}
-
+    margin-bottom: 2rem; }
+  
+  .timeline-card:last-child {
+    margin-bottom: 1rem; }
+  
+  .timeline-card:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 12px;
+    height: 12px;
+    top: 20px;
+    left: -41px;
+    border: 2px solid;
+    z-index: 2; }
+  
+  .timeline-card:after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    background-color: currentColor;
+    width: 29px;
+    height: 2px;
+    top: 25px;
+    left: -29px;
+    z-index: 1; }
+  
+  .timeline-card-primary {
+    border-left-color: #4A89DC; }
+  
+  .timeline-card-primary:before {
+    border-color: #4A89DC; }
+  
+  .timeline-card-primary:after {
+    background-color: #4A89DC; }
+  
+  .timeline-card-success {
+    border-left-color: #37BC9B; }
+  
+  .timeline-card-success:before {
+    border-color: #37BC9B; }
+  
+  .timeline-card-success:after {
+    background-color: #37BC9B; }
+  
+  
+  

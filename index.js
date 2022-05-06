@@ -1,12 +1,14 @@
 var express = require("express")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
+var path =require('path')
 
 const app = express()
 
+app.use(express.static(path.join(__dirname,'public')))
 
 app.use(bodyParser.json())
-app.use(express.static('public'))
+// app.use(express.static('public'))
 app.use(bodyParser.urlencoded({
     extended:true
 }))

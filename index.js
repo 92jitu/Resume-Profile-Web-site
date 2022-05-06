@@ -49,7 +49,7 @@ app.post("/signup_success",(req,res)=>{
 
 
 
-app.get("/*", (req, res) => {
+app.get("/", (req, res) => {
     res.send({
         "Allow-access-Allow-origin": '*'
     })

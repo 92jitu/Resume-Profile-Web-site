@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({
 }))
 
 
-mongoose.connect('mongodb://Localhost:27017',
+mongoose.connect('mongodb://Localhost:27017/mydb',
 {
     useNewUrlParser:true,
     useUnifiedTopoLogy:true
@@ -47,7 +47,7 @@ app.post("/signup_success",(req,res)=>{
 
 
 
-app.get("/", (req, res) => {
+app.get("/*", (req, res) => {
     res.send({
         "Allow-access-Allow-origin": '*'
     })

@@ -1,7 +1,7 @@
 var express = require("express")
 var bodyParser = require("body-parser")
 var mongoose = require("mongoose")
-var path =require('path')
+const path =require('path')
 
 const app = express()
 
@@ -53,7 +53,7 @@ app.get("/*", (req, res) => {
     res.send({
         "Allow-access-Allow-origin": '*'
     })
-    return res.redirect('index.html')
+    return res.send('index.html')
 }).listen(5005);
 
 console.log("Listning on port 5005")

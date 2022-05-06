@@ -53,7 +53,7 @@ app.get("/", (req, res) => {
     res.send({
         "Allow-access-Allow-origin": '*'
     })
-    return res.send('index.html')
+    return res.sendFile(path.join(__dirname,'/public/index.html'))
 }).listen(5005);
 
 console.log("Listning on port 5005")
